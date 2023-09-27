@@ -81,23 +81,23 @@ public class BigInteger_UFPS {
 		}
 		return resultado;
 	}
-
+	
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
+		String valor ="";
 		boolean controladora = true;
-		for (int digit : miNumero) {
-			if (controladora && digit == 0)
+		for (int i=0;i<this.miNumero.length;i++) {
+			
+			if(controladora && miNumero[i] == 0)
 				continue;
-			else if (controladora && digit > 0)
-				controladora = false;
-
-			sb.append(digit);
+			
+			controladora=false;
+			valor += miNumero[i];
 		}
 		tiempoFinal = System.currentTimeMillis();
 		long tiempoResultado = tiempoFinal - tiempoInicial;
 		System.out.println(tiempoResultado);
-		return sb.toString();
+		return valor;
 	}
 
 }

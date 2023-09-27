@@ -5,7 +5,6 @@
  */
 package Negocio;
 
-import java.util.Arrays;
 
 import Modelo.BigInteger_UFPS;
 
