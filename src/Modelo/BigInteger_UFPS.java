@@ -15,13 +15,14 @@ public class BigInteger_UFPS {
 	 * Numero="23456" miNUmero={2,3,4,5,6};
 	 */
 	private int miNumero[];
-	private int contador = 0;
-	private int resultado[];
+	long tiempoInicial;
+	long tiempoFinal;
 
 	public BigInteger_UFPS() {
 	}
 
 	public BigInteger_UFPS(String miNumero) {
+		tiempoInicial = System.currentTimeMillis();
 		String[] datos = miNumero.split("");
 		this.miNumero = new int[datos.length];
 		for (int i = 0; i < datos.length; i++) {
@@ -41,6 +42,7 @@ public class BigInteger_UFPS {
 	 */
 
 	public BigInteger_UFPS multiply(BigInteger_UFPS dos) {
+		
 		int resultado[] = new int[this.miNumero.length + dos.getMiNumero().length];
 
 		for (int i = 0; i < resultado.length; i++) {
@@ -92,6 +94,9 @@ public class BigInteger_UFPS {
 
 			sb.append(digit);
 		}
+		tiempoFinal = System.currentTimeMillis();
+		long tiempoResultado = tiempoFinal - tiempoInicial;
+		System.out.println(tiempoResultado);
 		return sb.toString();
 	}
 
